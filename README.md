@@ -1,25 +1,123 @@
-# This is practice Frontend Interview Questions
+# Frontend Interview Practice Project
 
-after cloning the project, first things to have is node 
+This repository contains practice exercises for frontend interview questions, focusing on webpack setup and basic JavaScript functionality.
 
-lets initialize the node 
-npm init -y
+## 🚀 Quick Start
 
-now package.json is here, so install new dependency
-npm install --save-dev webpack webpack-cli
+### Prerequisites
 
+-   **Node.js** (version 14 or higher recommended)
+-   **npm** (comes with Node.js)
 
-## integerating webpack to project
-to integrate the webpack with the project we need to 
+### Initial Setup
 
-### linking package json with webpack - add `"build" : "webpack"` script 
-### create a config file for webpack
+1. **Clone the repository**
 
-- by defining an entry point for webpack, an output description and mode you are going to use like production or development 
+    ```bash
+    git clone <repository-url>
+    cd frontend_interview
+    ```
 
-`look at webpack.config.js file for more info`
+2. **Initialize Node.js project**
 
+    ```bash
+    npm init -y
+    ```
 
-after this what is left is to build the project using webpack
+3. **Install webpack dependencies**
+    ```bash
+    npm install --save-dev webpack webpack-cli
+    ```
 
-`npm run build`
+## 📁 Project Structure
+
+```
+frontend_interview/
+├── README.md
+├── Interview.md
+└── webpack_exercise/
+    ├── index.html
+    ├── package.json
+    ├── webpack.config.js
+    └── src/
+        ├── css/
+        │   ├── main.css
+        │   └── input-elements.css
+        └── js/
+            ├── app.js
+            └── dom-loader.js
+```
+
+## 🔧 Webpack Integration
+
+### Step 1: Configure Package.json Scripts
+
+Add the build script to your `package.json`:
+
+```json
+{
+    "scripts": {
+        "build": "webpack"
+    }
+}
+```
+
+### Step 2: Create Webpack Configuration
+
+Create a `webpack.config.js` file with the following configuration:
+
+```javascript
+const path = require("path");
+
+module.exports = {
+    entry: "./src/js/app.js", // Entry point for your application
+    output: {
+        filename: "bundle.js", // Output filename
+        path: path.resolve(__dirname, "dist"), // Output directory
+    },
+    mode: "development", // Development mode for better debugging
+};
+```
+
+### Step 3: Build the Project
+
+```bash
+npm run build
+```
+
+## 📝 What This Project Demonstrates
+
+### Current Implementation
+
+-   **Basic webpack setup** with entry point and output configuration
+-   **Simple JavaScript functionality** - a toggle button that shows/hides content
+-   **CSS styling** with separate files for main styles and button elements
+-   **DOM manipulation** using vanilla JavaScript
+-   **File organization** with separate CSS and JS directories
+
+### Key Concepts Covered
+
+-   **Entry Point**: `./src/js/app.js` - the starting point for webpack bundling
+-   **Output**: `dist/bundle.js` - where the bundled file is generated
+-   **Mode**: Development mode for easier debugging
+-   **Asset Management**: CSS files are linked directly in HTML (not yet processed by webpack)
+
+## 🎯 Interview Topics
+
+This project demonstrates knowledge of:
+
+-   Basic webpack configuration and setup
+-   Module bundling concepts
+-   File organization and project structure
+-   Vanilla JavaScript DOM manipulation
+-   CSS organization and styling
+
+## 📚 Resources
+
+-   [Webpack Documentation](https://webpack.js.org/)
+-   [Node.js Documentation](https://nodejs.org/docs/)
+-   [npm Documentation](https://docs.npmjs.com/)
+
+---
+
+**Note**: This is a basic webpack setup. The project currently uses separate CSS files linked in HTML rather than webpack-processed CSS modules.
