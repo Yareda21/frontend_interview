@@ -2,23 +2,71 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8" />
-        <meta
-            name="viewport"
-            content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
-        />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-        <!-- two css files -->
-        <link rel="stylesheet" href="src/css/main.css" />
-        <link rel="stylesheet" href="src/css/input-elements.css" />
-        <title>Webpack 2 Basics</title>
+        <title>Environment-Aware Webpack Configuration</title>
+        <style>
+            body {
+                font-family: Arial, sans-serif;
+                max-width: 800px;
+                margin: 0 auto;
+                padding: 20px;
+            }
+            .container {
+                border: 1px solid #ccc;
+                padding: 20px;
+                margin: 20px 0;
+                border-radius: 5px;
+            }
+            .app-section {
+                background-color: #f0f8ff;
+            }
+            .admin-section {
+                background-color: #fff0f0;
+            }
+            h1 {
+                color: #333;
+                text-align: center;
+            }
+            h2 {
+                color: #666;
+            }
+        </style>
     </head>
     <body>
-        <h1>Let's learn Webpack 2</h1>
-        <button id="secret-button">Show the Secret</button>
-        <p id="secret-paragraph">You can't see this all the time</p>
-        
-        <!-- two js files  -->
-        <script src="src/js/dom-loader.js"></script>
-        <script src="src/js/app.js"></script>
+        <h1>Environment-Aware Webpack Configuration Demo</h1>
+
+        <div class="container app-section">
+            <h2>Main Application</h2>
+            <div id="app-container">
+                <p>Loading main application...</p>
+            </div>
+        </div>
+
+        <div class="container admin-section">
+            <h2>Admin Dashboard</h2>
+            <div id="admin-container">
+                <p>Loading admin dashboard...</p>
+            </div>
+        </div>
+
+        <div class="container">
+            <h2>Build Information</h2>
+            <p>
+                <strong>Development Mode:</strong> Run
+                <code>npm start</code> for hot reloading
+            </p>
+            <p>
+                <strong>Production Mode:</strong> Run
+                <code>npm run build</code> for optimized bundles
+            </p>
+            <p>
+                <strong>Entry Points:</strong> app.js (main app) and admin.js
+                (admin dashboard)
+            </p>
+        </div>
+
+        <!-- Webpack will automatically inject the bundled JavaScript files here -->
+        <!-- No need to manually include script tags - HTML Webpack Plugin handles this -->
     </body>
 </html>
