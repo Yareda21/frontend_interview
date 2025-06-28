@@ -1,4 +1,6 @@
-var showSecret = false;
+import { secretButton, secretParagraph } from "./dom-loader";
+
+const showSecret = false;
 
 secretButton.addEventListener("click", toggleSecretState);
 updateSecretParagraph();
